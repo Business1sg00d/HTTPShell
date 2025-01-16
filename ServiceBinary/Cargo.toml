@@ -1,0 +1,15 @@
+[package]
+name = "windows_service_wrapper"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+windows-service = "0.6.0"
+reqwest = { version = "0.11.24", features = ["blocking", "cookies"] }
+tokio = { version = "1", features = ["full"] }
+aes-gcm = "0.10.3"
+hex = "0.4.3"
+log = "0.4.22"
+env_logger = "0.11.5"
