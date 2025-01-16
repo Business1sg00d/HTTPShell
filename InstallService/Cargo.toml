@@ -1,0 +1,25 @@
+[package]
+name = "windows_Win32_Temp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+windows = { version = "0.52", features = ["Win32_Foundation", 
+"Win32_System_Services", 
+"Win32_Security", 
+"Win32_Networking_WinHttp", 
+"Win32_System_Com",] }
+
+winapi = { version = "0.3.9", features =["winuser",] }
+
+libloading = "0.8"
+
+rust-crypto = "0.2.36"
+
+aes-gcm = "0.10.3"
+
+hex = "0.4.3"
