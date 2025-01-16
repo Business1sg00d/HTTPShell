@@ -42,7 +42,7 @@ docker exec -ti [container_name] /bin/bash
 ```
 python3 -m http.server 80
 ```
-then wget from host. You can create another container with "docker run" and mount folders. The HTTP server with python is my preferred method. These binaries should be:
+then wget from host. You can create another container with "docker run" and mount folders. The HTTP server with python is my preferred method. Resulting binaries should be:
 ```
 windows_service_wrapper.exe
 windows_Win32_Temp.dll
