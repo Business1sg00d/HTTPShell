@@ -1,6 +1,8 @@
 # HTTPShell
 HTTPS Reverse shell. Installed as a service on Windows. Bypasses Defender as of 01/15/2025.
 
+Tested on Windows 10 Pro with 01/15/25 update.
+
 FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY! 
 
 Requirements and preperation:
