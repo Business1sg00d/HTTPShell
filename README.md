@@ -86,3 +86,5 @@ When entering "1" to get the command, you should see the following:
 ```
 Enter command: 
 ```
+
+You can also enter "2" in this "Enter command: " state that will sleep like explained above.
