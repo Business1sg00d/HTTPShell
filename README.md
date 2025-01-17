@@ -3,6 +3,8 @@ HTTPS Reverse shell. Installed as a service on Windows. Bypasses Defender as of 
 
 Tested on Windows 10 Pro with 01/15/25 update.
 
+Docker container and building projects done on Ubuntu 20.04.6 Focal LTS for both host and VM.
+
 FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY! 
 
 Requirements and preperation:
