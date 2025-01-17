@@ -22,6 +22,7 @@ openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:4096 -nodes -sh
 7. Create a virtual environment for the C2 server:
 ```
 mkdir controlServer
+mv app.py controlServer/
 python3 -m venv controlServer
 cd controlServer
 source bin/activate
