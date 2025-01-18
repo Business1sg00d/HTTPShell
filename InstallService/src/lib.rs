@@ -69,9 +69,7 @@ pub extern "system" fn make_srv(
             // Creating PCSTR types.
             let PCSTR_binaryPath: PCSTR = PCSTR(binaryPath.as_ptr() as *const u8);
             let PCSTR_srv_name: PCSTR = PCSTR(ServiceName.as_ptr() as *const u8);
-            let PCSTR_LoadOrder: PCSTR = PCSTR("".as_ptr() as *const u8);
-            let PCSTR_Dependencies: PCSTR = PCSTR("".as_ptr() as *const u8);
-
+            
             // Creating service.
             let testman = CreateServiceA(
                 serv_hands.unwrap(),        // hscmanager: SC_HANDLE
@@ -82,9 +80,9 @@ pub extern "system" fn make_srv(
                 SERVICE_START_TYPE(0x2),    // dwStartType: 0x2 == Auto
                 SERVICE_ERROR(0x0), // dwErrorControl: 0x0 == ignore error; does not log in event logs
                 PCSTR_binaryPath,   // lpBinaryPathName
-                PCSTR_LoadOrder,    // lpLoadOrderGroup optional
+                PCSTR::null(),    // lpLoadOrderGroup optional
                 Some(std::ptr::null_mut()), // lpdwTagId optional
-                PCSTR_Dependencies, // lpDependencies optional
+                PCSTR::null(), // lpDependencies optional
                 PCSTR::null(),      // lpServiceStartName optional
                 PCSTR::null(),      // lpPassword optional
             );
