@@ -1,7 +1,9 @@
 # HTTPShell
-HTTPS Reverse shell. Installed as a service on Windows. Bypasses Defender as of 01/15/2025.
+HTTPS Reverse shell. Installed as a service on Windows. 
 
-Tested on Windows 10 Pro with 01/15/25 update.
+Tested on Windows 10 Home/Pro with 01/15/25 update. No longer bypasses Windefend.
+
+The following repo is a simplified version that does bypass Windows 10/11 Pro/Home fully updated: https://github.com/Business1sg00d/RustHTTPSShell
 
 Docker container and building projects done on Ubuntu 20.04.6 Focal LTS for both host and VM.
 
